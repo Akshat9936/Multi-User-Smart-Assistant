@@ -3,14 +3,14 @@ import os
 
 # Set your API key here (get one free at aistudio.google.com if you haven't yet)
 # In a real production app, use environment variables. For a hackathon demo, this is fine.
-os.environ["GEMINI_API_KEY"] = "YOUR_API_KEY_HERE"
+os.environ["GEMINI_API_KEY"] = "AIzaSyBo6xAcCmJXtq37rLDf_uYsPxMLMQgagtc"
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 def generate_assistant_response(transcribed_text, speaker_id):
     print(f"Analyzing intent for {speaker_id}...")
     
     # We use gemini-1.5-flash for maximum speed to help with the xRT KPI
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     
     # The System Prompt: Strict instructions for the Smart Home logic
     system_context = f"""
